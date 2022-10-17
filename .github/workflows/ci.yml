@@ -33,7 +33,7 @@ jobs:
       # - run: npm install -g surge
       
       - name: Deploy to Staging
-        if: gitib.event_name == 'push'
+        if: github.event_name == 'push'
         run: npx surge --project ./build --domain arpanknandi.surge.sh
         env:
           SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
