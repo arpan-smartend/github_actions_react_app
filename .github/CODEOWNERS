@@ -1,0 +1,4 @@
+* @arpan-smartend
+*.js @arpan-smartend
+*.yml @arpan-smartend
+/public/ @arpan-smartend
