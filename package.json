@@ -2,6 +2,10 @@
   "name": "react-app",
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arpan-smartend/github_actions_react_app.git"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -38,6 +42,7 @@
     ]
   },
   "devDependencies": {
-    "prettier": "2.7.1"
+    "prettier": "2.7.1",
+    "semantic-release": "^19.0.5"
   }
 }
