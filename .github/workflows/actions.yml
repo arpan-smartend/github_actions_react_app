@@ -10,4 +10,6 @@ jobs:
         with:
           who-to-greet: "Arpan"
 
-      - run: echo "Time - ${{ steps.Hello.outputs.time}}"
+      - run: |
+          echo "Time - ${{ steps.Hello.outputs.time}}"
+          echo $Hello
