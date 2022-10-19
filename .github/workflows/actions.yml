@@ -5,6 +5,18 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - uses: ./.github/actions/issue
+        id: issue
+        with:
+          token: ${{ secrects.CUSTOM_TOKEN }}
+          title: Title
+          body: body
+          assigness: |
+            arpan-smartend
+
+      - run: |
+          echo ${{ steps.issue.outputs.issue }}
+
       - uses: ./.github/actions/hello
         id: Hello
         with:

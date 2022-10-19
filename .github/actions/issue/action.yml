@@ -1,0 +1,26 @@
+name: Open Github issue
+author: Arpan
+description: Opens a github issue
+
+inputs:
+  token:
+    description: Github Token
+    required: true
+
+  title:
+    description: Issue Title
+    required: true
+
+  body:
+    description: Issue Body
+
+  assignees:
+    description: Issue assignees
+
+outputs:
+  issue:
+    description: Issue description
+
+runs:
+  using: node16
+  main: dist/index.js
