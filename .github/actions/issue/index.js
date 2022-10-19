@@ -4,17 +4,11 @@ import { Octokit, App } from 'octokit'
 const { createActionAuth } = require('@octokit/auth-action')
 // or: import { createActionAuth } from "@octokit/auth-action";
 
-const auth = createActionAuth()
-const authentication = await auth()
-
 try {
   const token = core.getInput('token')
   const title = core.getInput('title')
   const body = core.getInput('body')
   const assignees = core.getInput('assignees')
-
-  console.log(JSON.parse(token))
-  console.log(JSON.stringify(title))
 
   // const ocktokit = new github.getOctokit(token)
 

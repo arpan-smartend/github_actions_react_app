@@ -14,17 +14,11 @@ const github = __nccwpck_require__(5438)
 const { createActionAuth } = __nccwpck_require__(20)
 // or: import { createActionAuth } from "@octokit/auth-action";
 
-const auth = createActionAuth()
-const authentication = await auth()
-
 try {
   const token = core.getInput('token')
   const title = core.getInput('title')
   const body = core.getInput('body')
   const assignees = core.getInput('assignees')
-
-  console.log(JSON.parse(token))
-  console.log(JSON.stringify(title))
 
   // const ocktokit = new github.getOctokit(token)
 
