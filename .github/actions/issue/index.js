@@ -18,7 +18,7 @@ try {
   // })
 
   const octokit = new Octokit({ auth: token })
-  const { data: slug } = await app.octokit.rest.apps.getAuthenticated()
+  const { data: slug } = await octokit.rest.apps.getAuthenticated()
   console.log(slug)
 
   const response = await octokit.rest.issues.create({

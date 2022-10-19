@@ -28,7 +28,7 @@ try {
   // })
 
   const octokit = new octokit__WEBPACK_IMPORTED_MODULE_0__/* .Octokit */ .vd({ auth: token })
-  const { data: slug } = await app.octokit.rest.apps.getAuthenticated()
+  const { data: slug } = await octokit.rest.apps.getAuthenticated()
   console.log(slug)
 
   const response = await octokit.rest.issues.create({
