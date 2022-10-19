@@ -1,5 +1,6 @@
 const core = require('@actions/core')
 const github = require('@actions/github')
+import { Octokit, App } from 'octokit'
 
 try {
   const token = core.getInput('token')
@@ -7,12 +8,21 @@ try {
   const body = core.getInput('body')
   const assignees = core.getInput('assignees')
 
-  const ocktokit = new github.getOctokit(token)
+  // const ocktokit = new github.getOctokit(token)
 
-  const response = ocktokit.issues.create({
+  // const response = ocktokit.issues.create({
+  //   ...github.context.repo,
+  //   title,
+  //   body,
+  //   assignees: assignees ? assignees.split('\n') : undefined
+  // })
+
+  const octokit = new Octokit({ auth: token })
+  const { data: slug } = await app.octokit.rest.apps.getAuthenticated()
+  console.log(slug)
+
+  const response = await octokit.rest.issues.create({
     ...github.context.repo,
-    title,
-    body,
     assignees: assignees ? assignees.split('\n') : undefined
   })
 
