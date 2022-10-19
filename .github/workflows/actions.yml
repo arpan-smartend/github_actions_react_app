@@ -8,7 +8,7 @@ jobs:
       - uses: ./.github/actions/issue
         id: issue
         with:
-          token: ${{ secrects.CUSTOM_TOKEN }}
+          token: ${{ secrets.CUSTOM_TOKEN }}
           title: Title
           body: body
           assigness: |
