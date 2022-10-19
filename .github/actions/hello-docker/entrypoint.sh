@@ -18,4 +18,4 @@ echo "some logs"
 echo "some logs"
 echo "::endgroup::"
 
-echo "::set-env name=HELLO::"
+echo "{environment_variable_name}={value}" >> $GITHUB_ENV
