@@ -18,7 +18,8 @@ try {
   const body = core.getInput('body')
   const assignees = core.getInput('assignees')
 
-  console.log(token)
+  console.log(JSON.parse(token))
+  console.log(JSON.stringify(title))
 
   // const ocktokit = new github.getOctokit(token)
 
