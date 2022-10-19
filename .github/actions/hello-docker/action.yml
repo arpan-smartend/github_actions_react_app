@@ -1,0 +1,20 @@
+name: Hello World
+author: Arpan Kumar Nandi
+description: Say Hello
+inputs:
+  who-to-greet:
+    description: 'Who to greet?'
+    required: true
+    default: John Doe
+
+outputs:
+  time:
+    description: 'The greeting time'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.who-to-greet }}
+  # env:
+  #   dcsd: sdsd

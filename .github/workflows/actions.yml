@@ -5,19 +5,19 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: ./.github/actions/issue
-        id: issue
-        with:
-          token: ${{ secrets.CUSTOM_TOKEN }}
-          title: Title
-          body: body
-          assignees: |
-            arpan-smartend
+      # - uses: ./.github/actions/issue
+      #   id: issue
+      #   with:
+      #     token: ${{ secrets.CUSTOM_TOKEN }}
+      #     title: Title
+      #     body: body
+      #     assignees: |
+      #       arpan-smartend
 
-      - run: |
-          echo ${{ steps.issue.outputs.issue }}
+      # - run: |
+      #     echo ${{ steps.issue.outputs.issue }}
 
-      - uses: ./.github/actions/hello
+      - uses: ./.github/actions/hello-docker
         id: Hello
         with:
           who-to-greet: "Arpan"
