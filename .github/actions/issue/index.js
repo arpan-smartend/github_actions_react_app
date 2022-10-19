@@ -1,6 +1,11 @@
 const core = require('@actions/core')
 const github = require('@actions/github')
 import { Octokit, App } from 'octokit'
+const { createActionAuth } = require('@octokit/auth-action')
+// or: import { createActionAuth } from "@octokit/auth-action";
+
+const auth = createActionAuth()
+const authentication = await auth()
 
 try {
   const token = core.getInput('token')
@@ -20,7 +25,10 @@ try {
   //   assignees: assignees ? assignees.split('\n') : undefined
   // })
 
-  const octokit = new Octokit({ auth: token })
+  const auth = createActionAuth()
+  const authentication = await auth()
+
+  const octokit = new Octokit({ authStrategy: createActionAuth })
   const { data: slug } = await octokit.rest.apps.getAuthenticated()
   console.log(slug)
 
