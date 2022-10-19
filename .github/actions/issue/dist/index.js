@@ -27,12 +27,14 @@ try {
   //   assignees: assignees ? assignees.split('\n') : undefined
   // })
 
-  const octokit = new octokit__WEBPACK_IMPORTED_MODULE_0__/* .Octokit */ .vd({ auth: token })
+  const octokit = new octokit__WEBPACK_IMPORTED_MODULE_0__/* .Octokit */ .vd({ auth: JSON.parse(token) })
   const { data: slug } = await octokit.rest.apps.getAuthenticated()
   console.log(slug)
 
   const response = await octokit.rest.issues.create({
     ...github.context.repo,
+    title,
+    body,
     assignees: assignees ? assignees.split('\n') : undefined
   })
 

@@ -17,12 +17,14 @@ try {
   //   assignees: assignees ? assignees.split('\n') : undefined
   // })
 
-  const octokit = new Octokit({ auth: token })
+  const octokit = new Octokit({ auth: JSON.parse(token) })
   const { data: slug } = await octokit.rest.apps.getAuthenticated()
   console.log(slug)
 
   const response = await octokit.rest.issues.create({
     ...github.context.repo,
+    title,
+    body,
     assignees: assignees ? assignees.split('\n') : undefined
   })
 
