@@ -8,6 +8,8 @@ try {
   const body = core.getInput('body')
   const assignees = core.getInput('assignees')
 
+  console.log(token)
+
   // const ocktokit = new github.getOctokit(token)
 
   // const response = ocktokit.issues.create({
@@ -17,7 +19,7 @@ try {
   //   assignees: assignees ? assignees.split('\n') : undefined
   // })
 
-  const octokit = new Octokit({ auth: JSON.parse(token) })
+  const octokit = new Octokit({ auth: token })
   const { data: slug } = await octokit.rest.apps.getAuthenticated()
   console.log(slug)
 

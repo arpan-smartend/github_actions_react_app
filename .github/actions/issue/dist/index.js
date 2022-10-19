@@ -18,6 +18,8 @@ try {
   const body = core.getInput('body')
   const assignees = core.getInput('assignees')
 
+  console.log(token)
+
   // const ocktokit = new github.getOctokit(token)
 
   // const response = ocktokit.issues.create({
@@ -27,7 +29,7 @@ try {
   //   assignees: assignees ? assignees.split('\n') : undefined
   // })
 
-  const octokit = new octokit__WEBPACK_IMPORTED_MODULE_0__/* .Octokit */ .vd({ auth: JSON.parse(token) })
+  const octokit = new octokit__WEBPACK_IMPORTED_MODULE_0__/* .Octokit */ .vd({ auth: token })
   const { data: slug } = await octokit.rest.apps.getAuthenticated()
   console.log(slug)
 
